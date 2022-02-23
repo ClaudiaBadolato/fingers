@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How many finger</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            let guess = Math.floor(Math.random()*6);
+            const btn = document.getElementById('guess');
+            btn.addEventListener('click', function(){
+                const quantity = document.getElementById('quantity');
+                  const q = quantity.value;
+                if (+q === guess){
+                    alert('Well Done!');
+                } else {
+                    alert('Nope! The number was' + guess);
+                    //quantity.value = '';
+                }
+                guess = Math.floor(Math.random()*6);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>How many fingers am I holding up?</h1>
+    <form name= "fingers">
+        <div class="form-group">
+            <input id="quantity" type="number" name="quantity" min="1" max="5">
+        <button id="guess" type="button">Guess!</button>
+    </div>
+        
+    </form>
+</body>
+</html>
